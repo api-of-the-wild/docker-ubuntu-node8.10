@@ -25,16 +25,5 @@ RUN apt-get update -yq \
 # Check node.js install
 RUN node -v \
   && npm -v \
-  && npm i -g nodemon \
-  && nodemon -v
-# && npm i -g yarn \
-# && yarn --version
-
-# Install yarn
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
-  apt-get update \
-  && yes Y | apt-get install --no-install-recommends yarn
-
-# Check yarn install
-RUN yarn --version
+  && npm i -g yarn \
+  && yarn -v
